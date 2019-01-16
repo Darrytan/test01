@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.TravellerMapper">
+    <!--根据订单号查询旅客信息-->
+    <select id="findTravellerByOrderId" resultType="com.itheima.pojo.Traveller">
+        SELECT t.* FROM TRAVELLER t LEFT JOIN ORDER_TRAVELLER ot ON t.ID = ot.TRAVELLERID WHERE ot.ORDERID = #{orderid}
+    </select>
+</mapper>
